@@ -138,18 +138,18 @@ menu:
       name: "\U0001F50D"
       url: /search/
       weight: 10
+    - identifier: archive
+      name: archive
+      url: /archives/
+      weight: 20
 #     - identifier: categories
 #       name: categories
 #       url: /categories/
-#       weight: 20
-#     - identifier: tags
-#       name: tags
-#       url: /tags/
 #       weight: 30
-    # - identifier: archive
-    #   name: archive
-    #   url: /archives/
-    #   weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 40
 #     # - identifier: example
 #     #   name: example.org
 #     #   url: https://example.org
