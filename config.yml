@@ -93,6 +93,8 @@ params:
       url: "https://www.linkedin.com/in/viceroyshayer/"
     - name: github
       url: "https://github.com/mmhshayer"
+    - name: kaggle
+      url: "https://www.kaggle.com/mmhshayer"
 
   analytics:
     google:
