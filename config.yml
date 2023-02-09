@@ -116,7 +116,7 @@ params:
   outputs:
       home:
           - HTML
-          - RSS
+          # - RSS
           # - JSON # is necessary
 
   # https://fusejs.io/api/options.html
