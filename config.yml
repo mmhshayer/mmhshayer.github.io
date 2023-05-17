@@ -59,7 +59,7 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
+    enabled: false # needs to be explicitly set
     title: Mohammad Mustakim Hassan
     subtitle: "A full-stack develoepr"
     imageUrl: "https://media.giphy.com/media/3ov9jDblR6W2d6NfJC/giphy.gif"
@@ -120,8 +120,8 @@ params:
   outputs:
       home:
           - HTML
-          # - RSS
-          # - JSON # is necessary
+          - RSS
+          - JSON # is necessary
 
   # https://fusejs.io/api/options.html
   fuseOpts:
