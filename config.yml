@@ -59,7 +59,7 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
+    enabled: false # needs to be explicitly set
     title: Mohammad Mustakim Hassan
     subtitle: "A full-stack develoepr"
     imageUrl: "https://media.giphy.com/media/3ov9jDblR6W2d6NfJC/giphy.gif"
@@ -120,8 +120,8 @@ params:
   outputs:
       home:
           - HTML
-          # - RSS
-          # - JSON # is necessary
+          - RSS
+          - JSON # is necessary
 
   # https://fusejs.io/api/options.html
   fuseOpts:
@@ -138,18 +138,18 @@ menu:
       name: "\U0001F50D"
       url: /search/
       weight: 10
+    - identifier: archive
+      name: archive
+      url: /archives/
+      weight: 20
 #     - identifier: categories
 #       name: categories
 #       url: /categories/
-#       weight: 20
-#     - identifier: tags
-#       name: tags
-#       url: /tags/
 #       weight: 30
-    # - identifier: archive
-    #   name: archive
-    #   url: /archives/
-    #   weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 40
 #     # - identifier: example
 #     #   name: example.org
 #     #   url: https://example.org
