@@ -113,7 +113,7 @@ COPY . .
 # Expose the port that the frontend application will run on
 EXPOSE 4200
 # Command to start the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
 ```
 
 2.Create a Dockerfile for the admin application
@@ -138,7 +138,7 @@ COPY . .
 # Expose the port that the admin application will run on
 EXPOSE 4300
 # Command to start the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
 ```
 
 3.Create a Dockerfile for the backend application
@@ -163,7 +163,9 @@ COPY . .
 # Expose the port that the backend application will run on
 EXPOSE 3000
 # Command to start the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
+```
+
 ```
 
 4.Add `.dockerignore` file to the root of each application
@@ -193,6 +195,7 @@ The general steps to define a docker-compose.yml file for this use case are as f
 3.Set up the build context and Dockerfile for each service.
 4.Define volumes for Redis and MongoDB to persist data.
 5. Make sure the services can communicate with each other using their service names as hostnames (containers in the same network can resolve each other's hostnames).
+6. setup bind mounts for each service to enable live reloading. This mounts will persist the changes made in the host machine node_modules & the code to the container.
 
 Here's a basic example of what your docker-compose.yml might look like:
 
@@ -206,9 +209,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - '4200:4200'
-    # volumes:
-    #   - /apps/frontend/node_modules
-    #   - .:/apps/frontend
+    volumes:
+      - /apps/frontend/node_modules
+      - %cd%:/apps/frontend # for cmd
+    # - ${pwd}:/apps/frontend # for powershell
+    # - $(pwd)/apps/frontend:/apps/frontend # for bash
     depends_on: 
         - backend
   
@@ -218,9 +223,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - '4300:4300'
-    # volumes:
-    #     - /apps/admin/node_modules
-    #     - .:/apps/admin
+    volumes:
+      - /apps/admin/node_modules
+      - %cd%:/apps/admin # for cmd
+    # - ${pwd}:/apps/admin # for powershell
+    # - $(pwd)/apps/admin:/apps/admin # for bash
     depends_on: 
         - backend
   
@@ -230,9 +237,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - '3000:3000'
-    # volumes:
-    #     - /apps/backend/node_modules
-    #     - .:/apps/backend
+    volumes:
+     - /apps/backend/node_modules
+     - %cd%:/apps/backend # for cmd
+    # - ${pwd}:/apps/backend # for powershell
+    # - $(pwd)/apps/backend:/apps/backend # for bash
     environment:
       REDIS_HOST: redis
       MONGO_HOST: mongodb
@@ -280,7 +289,7 @@ services:
 1.Run `docker-compose ps` to see the status of the containers.
 2.Run `docker-compose logs` to see the logs of the containers.
 3.Run `docker-compose exec <service-name> <command>` to execute a command inside a container.
-4.Run `docker-compose exec bash` to open a bash shell inside the container.
+4.Run `docker-compose exec -it <service-name> bash` to open a bash shell inside the container.
 
 ## Developement Environment Setup & Caveats
 
