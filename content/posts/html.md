@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "HTML"
 date: "2023-05-15"
 description: "A brief description of HTML"
-tags: ["frontend", "web"]
+tags: ["frontend", "web", "html"]
 ShowToc: true
 ---
 If you've ever visited a website, chances are you've encountered HTML, the foundational language used to build web pages. It is essential for anyone looking to create web pages, web applications, or other digital experiences. It provides a way to structure content on a web page, define how it should be displayed, and create engaging and interactive experiences for users.
@@ -24,38 +24,39 @@ HTML5 was designed to be more powerful and flexible than previous versions of th
 
 ## Key Concepts
 
- - HTML is a markup language, which means it uses `tags` to define the structure and content of a web page.
- - HTML documents are made up of `elements`, which are enclosed in angle brackets `< >`. Each element has a start tag `<...>`, content, and an end tag `</...>`.
- - HTML elements can have `attributes`, which provide additional information about the element.
- - HTML documents have a ==specific structure==, which includes a doctype declaration, a head section, and a body section.
- - HTML provides a way to add meaning to content through the use of `semantic elements`. These elements:
-    - indicate the meaning and purpose of the content
-    - improve accessibility 
-    - improve search engine optimization.
- - HTML can be styled using [CSS](css) (Cascading Style Sheets), which allows for the separation of content and presentation.
- - HTML documents can be validated to ensure that they are well-formed and comply with HTML standards.
+- HTML is a markup language, which means it uses `tags` to define the structure and content of a web page.
+- HTML documents are made up of `elements`, which are enclosed in angle brackets `< >`. Each element has a start tag `<...>`, content, and an end tag `</...>`.
+- HTML elements can have `attributes`, which provide additional information about the element.
+- HTML documents have a ==specific structure==, which includes a doctype declaration, a head section, and a body section.
+- HTML provides a way to add meaning to content through the use of `semantic elements`. These elements:
+  - indicate the meaning and purpose of the content
+  - improve accessibility
+  - improve search engine optimization.
+- HTML can be styled using [CSS](css) (Cascading Style Sheets), which allows for the separation of content and presentation.
+- HTML documents can be validated to ensure that they are well-formed and comply with HTML standards.
 
 ## Example
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My First HTML Page</title>
+ <title>My First HTML Page</title>
 </head>
 <body>
-	<h1>Hello, World!</h1>
-	<p>This is my first HTML page. It contains a heading and a paragraph.</p>
+ <h1>Hello, World!</h1>
+ <p>This is my first HTML page. It contains a heading and a paragraph.</p>
 </body>
 </html>
 ```
+
 1. `<!DOCTYPE html>`: The document type declaration that tells the browser this is an HTML document.
 2. `<html>`: The opening tag of an HTML document.
    - `<head>`: The section of the document that contains information about the document.
      - `<title>`: The title of the document that appears in the browser tab and is used by search engines to identify the content of the page.
      - `</title>`: The closing tag for the title element.
    - `</head>`: The closing tag for the head section.
-   -` <body>`: The section of the document that contains the content displayed in the browser.
+   -`<body>`: The section of the document that contains the content displayed in the browser.
      - `<h1>`: A heading element used to provide structure and hierarchy to the content of the web page.
        - Hello, World!: The text content for the heading element.
      - `</h1>`: The closing tag for the heading element.

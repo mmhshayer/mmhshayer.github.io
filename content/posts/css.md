@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "CSS"
 date: "2023-05-17"
 description: "A brief description of CSS"
-tags: ["frontend", "web"]
+tags: ["frontend", "web", "css"]
 ShowToc: true
 ---
 Cascading Style Sheets, or CSS, is a styling language used to add design and layout to web pages. It works in conjunction with HTML, providing a way to control the appearance of HTML elements on a web page. With CSS, you can change the color, font, size, and spacing of text and other content, as well as add backgrounds, borders, and other visual effects.
@@ -28,17 +28,18 @@ CSS3 was released in 1999 and introduced many new features and capabilities, inc
 
 ## Key Concepts
 
- - CSS provides a way to control the appearance of HTML elements on a web page.
- - CSS is used to add design and layout to web pages, including things like color, font, size, spacing, backgrounds, borders, and other visual effects.
- - CSS uses a selector syntax to target specific HTML elements and apply styles to them.
- - CSS rules are made up of a selector and a declaration block.
- - The declaration block contains one or more property-value pairs, which specify the style to be applied to the selected elements.
- - CSS supports inheritance, which means that styles applied to a parent element can be inherited by its children.
- - CSS can be included in an HTML document using inline styles, embedded stylesheets, or external stylesheets.
- - CSS can be used to create responsive designs that adapt to different screen sizes and devices.
+- CSS provides a way to control the appearance of HTML elements on a web page.
+- CSS is used to add design and layout to web pages, including things like color, font, size, spacing, backgrounds, borders, and other visual effects.
+- CSS uses a selector syntax to target specific HTML elements and apply styles to them.
+- CSS rules are made up of a selector and a declaration block.
+- The declaration block contains one or more property-value pairs, which specify the style to be applied to the selected elements.
+- CSS supports inheritance, which means that styles applied to a parent element can be inherited by its children.
+- CSS can be included in an HTML document using inline styles, embedded stylesheets, or external stylesheets.
+- CSS can be used to create responsive designs that adapt to different screen sizes and devices.
 
 ## Example
-```
+
+```css
 /* inline styles */
 
 <h1 style="color: blue; font-size: 24px;">Hello, World!</h1>
