@@ -107,7 +107,7 @@ WORKDIR /usr/src/app/frontend
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
 # Install dependencies
-RUN npm install
+RUN npm install --silent
 # Copy the rest of the frontend application code to the container
 COPY . .
 # Expose the port that the frontend application will run on
@@ -132,7 +132,7 @@ WORKDIR /usr/src/app/admin
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
 # Install dependencies
-RUN npm install
+RUN npm install --silent
 # Copy the rest of the admin application code to the container
 COPY . .
 # Expose the port that the admin application will run on
@@ -157,7 +157,7 @@ WORKDIR /usr/src/app/backend
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
 # Install dependencies
-RUN npm install
+RUN npm install --silent
 # Copy the rest of the backend application code to the container
 COPY . .
 # Expose the port that the backend application will run on
@@ -206,9 +206,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - '4200:4200'
-    volumes:
-      - /apps/frontend/node_modules
-      - .:/apps/frontend
+    # volumes:
+    #   - /apps/frontend/node_modules
+    #   - .:/apps/frontend
+    depends_on: 
+        - backend
   
   admin:
     build:
@@ -216,9 +218,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - '4300:4300'
-    volumes:
-        - /apps/admin/node_modules
-        - .:/apps/admin
+    # volumes:
+    #     - /apps/admin/node_modules
+    #     - .:/apps/admin
+    depends_on: 
+        - backend
   
   backend:
     build:
@@ -226,12 +230,18 @@ services:
       dockerfile: Dockerfile
     ports:
       - '3000:3000'
-    volumes:
-        - /apps/backend/node_modules
-        - .:/apps/backend
+    # volumes:
+    #     - /apps/backend/node_modules
+    #     - .:/apps/backend
     environment:
       REDIS_HOST: redis
       MONGO_HOST: mongodb
+    links:
+      - redis
+      - mongodb
+    depends_on: 
+        - redis
+        - mongodb
 
   redis:
     image: redis
