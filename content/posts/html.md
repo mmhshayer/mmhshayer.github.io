@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "HTML"
 date: "2023-05-15"
 description: "A brief description of HTML"
-tags: ["frontend", "web"]
+tags: ["frontend", "web", "html"]
 ShowToc: true
 ---
 If you've ever visited a website, chances are you've encountered HTML, the foundational language used to build web pages. It is essential for anyone looking to create web pages, web applications, or other digital experiences. It provides a way to structure content on a web page, define how it should be displayed, and create engaging and interactive experiences for users.

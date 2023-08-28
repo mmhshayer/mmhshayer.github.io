@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "CSS"
 date: "2023-05-17"
 description: "A brief description of CSS"
-tags: ["frontend", "web"]
+tags: ["frontend", "web", "css"]
 ShowToc: true
 ---
 Cascading Style Sheets, or CSS, is a styling language used to add design and layout to web pages. It works in conjunction with HTML, providing a way to control the appearance of HTML elements on a web page. With CSS, you can change the color, font, size, and spacing of text and other content, as well as add backgrounds, borders, and other visual effects.

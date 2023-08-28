@@ -1,9 +1,9 @@
 ---
-author: "Your Name"
+author: "Mohammad Mustakim Hassan"
 title: "JavaScript"
 date: "2023-05-16"
 description: "A brief description of JavaScript"
-tags: ["frontend", "web"]
+tags: ["frontend", "web", "javascript"]
 ShowToc: true
 ---
 If you've ever used a website that has interactive features, you have likely encountered JavaScript. JavaScript is a popular programming language used to create dynamic and interactive web pages. It provides the ability to add interactivity and functionality to your web pages and is essential for any web developer looking to create engaging and interactive web experiences.
