@@ -11,7 +11,34 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mmhshayer.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mmhshayer.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying a JAMstack Blog with Hugo, PaperMod, GitHub Actions, and GitHub Pages</title>
+      <link>https://mmhshayer.github.io/posts/hugo-for-blog/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmhshayer.github.io/posts/hugo-for-blog/</guid>
+      <description>Learn how to deploy a JAMstack blog using Hugo, PaperMod theme, GitHub Actions, and GitHub Pages.</description>
+    </item>
+    
+    <item>
+      <title>React &amp; Next.js: Building Powerful Web Applications</title>
+      <link>https://mmhshayer.github.io/posts/react/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmhshayer.github.io/posts/react/</guid>
+      <description>Revolutionizing modern web application development.</description>
+    </item>
+    
+    <item>
+      <title>Vue &amp; Nuxt.js: Advancing Web Development with Key Benefits</title>
+      <link>https://mmhshayer.github.io/posts/vue/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmhshayer.github.io/posts/vue/</guid>
+      <description>Intuitive UIs and efficient web development</description>
+    </item>
+    
     <item>
       <title>CSS</title>
       <link>https://mmhshayer.github.io/posts/css/</link>

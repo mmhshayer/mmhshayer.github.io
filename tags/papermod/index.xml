@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PaperMod on MMHShayer</title>
+    <link>https://mmhshayer.github.io/tags/papermod/</link>
+    <description>Recent content in PaperMod on MMHShayer</description>
+    <image>
+      <title>MMHShayer</title>
+      <url>https://mmhshayer.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://mmhshayer.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mmhshayer.github.io/tags/papermod/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying a JAMstack Blog with Hugo, PaperMod, GitHub Actions, and GitHub Pages</title>
+      <link>https://mmhshayer.github.io/posts/hugo-for-blog/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmhshayer.github.io/posts/hugo-for-blog/</guid>
+      <description>Learn how to deploy a JAMstack blog using Hugo, PaperMod theme, GitHub Actions, and GitHub Pages.</description>
+    </item>
+    
+  </channel>
+</rss>

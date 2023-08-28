@@ -2,28 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mmhshayer.github.io/posts/hugo-for-blog/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/frontend/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/github-actions/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/github-pages/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/hugo/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/jamstack/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/nextjs/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/nuxtjs/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/papermod/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/posts/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/react/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/posts/react/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/vue/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/posts/vue/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/web/</loc>
+    <lastmod>2023-08-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://mmhshayer.github.io/posts/css/</loc>
     <lastmod>2023-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mmhshayer.github.io/tags/frontend/</loc>
-    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mmhshayer.github.io/</loc>
-    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mmhshayer.github.io/posts/</loc>
-    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mmhshayer.github.io/tags/</loc>
-    <lastmod>2023-05-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mmhshayer.github.io/tags/web/</loc>
+    <loc>https://mmhshayer.github.io/tags/css/</loc>
     <lastmod>2023-05-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mmhshayer.github.io/posts/javascript/</loc>
     <lastmod>2023-05-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://mmhshayer.github.io/tags/javascript/</loc>
+    <lastmod>2023-05-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://mmhshayer.github.io/posts/html/</loc>
+    <lastmod>2023-05-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mmhshayer.github.io/tags/html/</loc>
     <lastmod>2023-05-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mmhshayer.github.io/about/</loc>
