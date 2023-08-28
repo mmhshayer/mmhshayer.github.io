@@ -59,9 +59,9 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
+    enabled: true # needs to be explicitly set
     title: Mohammad Mustakim Hassan
-    subtitle: "A full-stack develoepr"
+    subtitle: "A full-stack engineer"
     imageUrl: "https://media.giphy.com/media/3ov9jDblR6W2d6NfJC/giphy.gif"
     imageWidth: 120
     imageHeight: 120
