@@ -32,21 +32,23 @@ JavaScript was standardized by the European Computer Manufacturers Association (
 
 ## Example
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My First JavaScript Page</title>
+ <title>My First JavaScript Page</title>
 </head>
 <body>
-	<h1>Hello, World!</h1>
-	<p>Click the button to change the text.</p>
-	<button onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Click me</button>
-	<p id="demo"></p>
+ <h1>Hello, World!</h1>
+ <p>Click the button to change the text.</p>
+ <button onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Click me</button>
+ <p id="demo"></p>
 </body>
 </html>
 ```
+
 In this example, we have a simple HTML document with a heading, a paragraph, a button, and an empty paragraph with an ID of "demo." The button has an onclick attribute that contains some JavaScript code. When the button is clicked, the JavaScript code finds the empty paragraph with the ID of "demo" and sets its content to "Hello JavaScript!"
 
 ## Conclusion
+
 JavaScript is a powerful and versatile programming language that is essential for any web developer. With JavaScript, you can add interactivity and functionality to your web pages, create animations, validate forms, and handle user input. JavaScript has a rich history and continues to evolve, with new features and capabilities being added in each new version of the language. With the knowledge you have gained from this article, you can start experimenting with JavaScript and creating your own interactive
