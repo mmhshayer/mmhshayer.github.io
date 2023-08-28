@@ -24,62 +24,56 @@ npm install -g nx
 npx create-nx-workspace@latest
 ```
 
-3.Install NestJS CLI
+> Go through the prompts and select a **node** application with **NestJS** as the backend framework and name it **backend**.
+
+3.Install and then create a NextJS **frontend**, **admin** application
 
 ```bash
-npm install -D @nx/nest
-```
-
-4.Create a NestJS **backend** application
-
-```bash
-nx g  @nx/nest:app backend
-```
-
-5.Create a NextJS **frontend** application
-
-```bash
+cd <project-name>
+npm install --save-dev @nx/next
 nx g  @nx/next:app frontend
-```
-
-6.Create a NextJS **admin** application
-
-```bash
 nx g  @nx/next:app admin
 ```
 
-7.Add redis and mongo database to the backend application
+> Go through the prompts and select appropiate configuration, we are going for minimal with **CSS**, **no E2E test** and a **APP Router**
+
+4.Add redis and mongo database to the backend application
 
 ```bash
-npm install @nestjs/redis cache-manager @nestjs/mongoose mongoose
+npm install @nestjs/mongoose mongoose @nestjs/cache-manager cache-manager cache-manager-redis-store@2
+
+npm install --save-dev @types/cache-manager-redis-store
 ```
 
-8.Implement redis and mongo database in the backend application
+5.Implement redis and mongo database in the backend application
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { CacheModule } from '@nestjs/common';
+
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { CacheModule } from '@nestjs/cache-manager';
 import * as redisStore from 'cache-manager-redis-store';
 
 @Module({
   imports: [
-    // mongodb on localhost with default port 27017
-    MongooseModule.forRoot('mongodb://localhost:27017/mydatabase', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }),
-    // Redis server on localhost with default port 6379
+    MongooseModule.forRoot('mongodb://localhost:27017/mydatabase'),
     CacheModule.register({
+      isGlobal: true,
       store: redisStore,
       host: 'localhost',
       port: 6379,
     }),
   ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
+
 ```
 
-9.Initialize git repository and make initial commit
+6.Initialize git repository and make initial commit
 
 ```bash
 git config --global user.name "Your Name"
@@ -166,8 +160,6 @@ EXPOSE 3000
 CMD ["npm", "run", "dev"]
 ```
 
-```
-
 4.Add `.dockerignore` file to the root of each application
 
 ```dockerignore
@@ -211,9 +203,7 @@ services:
       - '4200:4200'
     volumes:
       - /apps/frontend/node_modules
-      - %cd%:/apps/frontend # for cmd
-    # - ${pwd}:/apps/frontend # for powershell
-    # - $(pwd)/apps/frontend:/apps/frontend # for bash
+      - ./:/apps/frontend:ro
     depends_on: 
         - backend
   
@@ -225,9 +215,7 @@ services:
       - '4300:4300'
     volumes:
       - /apps/admin/node_modules
-      - %cd%:/apps/admin # for cmd
-    # - ${pwd}:/apps/admin # for powershell
-    # - $(pwd)/apps/admin:/apps/admin # for bash
+      - ./:/apps/admin:ro
     depends_on: 
         - backend
   
@@ -239,9 +227,7 @@ services:
       - '3000:3000'
     volumes:
      - /apps/backend/node_modules
-     - %cd%:/apps/backend # for cmd
-    # - ${pwd}:/apps/backend # for powershell
-    # - $(pwd)/apps/backend:/apps/backend # for bash
+     - ./:/apps/backend:ro
     environment:
       REDIS_HOST: redis
       MONGO_HOST: mongodb
@@ -261,6 +247,10 @@ services:
     image: mongo
     volumes:
       - mongo-data:/data/db
+
+volumes:
+  redis-data:
+  mongo-data:
 ```
 
 ## Running the Dockerized Application
