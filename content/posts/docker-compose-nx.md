@@ -8,7 +8,7 @@ ShowToc: true
 draft: true
 ---
 
-Discover how to leverage Docker to streamline the development workflow of your applications.Suppose you have an application that has 2 frontend and one backend. It uses a redis database and a mongo database. You want to Dockerize it for ease of developement and deployment. In that case, this blog post is for you.
+Discover how to leverage Docker to streamline the development workflow of your applications.Suppose you have an application that has 2 frontend and one backend. It uses a redis database and a mongo database. You want to Dockerize it for ease of development and deployment. In that case, this blog post is for you.
 
 ## Preparation
 
@@ -35,7 +35,7 @@ nx g  @nx/next:app frontend
 nx g  @nx/next:app admin
 ```
 
-> Go through the prompts and select appropiate configuration, we are going for minimal with **CSS**, **no E2E test** and a **APP Router**
+> Go through the prompts and select appropriate configuration, we are going for minimal with **CSS**, **no E2E test** and a **APP Router**
 
 4.Add redis and mongo database to the backend application
 
@@ -281,7 +281,7 @@ volumes:
 3.Run `docker-compose exec <service-name> <command>` to execute a command inside a container.
 4.Run `docker-compose exec -it <service-name> bash` to open a bash shell inside the container.
 
-## Developement Environment Setup & Caveats
+## Development Environment Setup & Caveats
 
 In a typical development process using Docker Compose, the applications can live reload when a developer makes changes and saves their code. This live reloading capability is achieved through volume mapping, which allows the code changes made on the host machine to be reflected immediately inside the running containers. Here's how it works:
 
