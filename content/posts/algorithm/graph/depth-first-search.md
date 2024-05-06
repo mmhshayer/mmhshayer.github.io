@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "Depth First Search"
 date: "2023-05-06"
 description: "Notes on Depth First Search (DFS)"
-tags: ["algorithm", "graph theory"]
+tags: ["algorithm", "search", "graph"]
 ShowToc: true
 draft: true
 ---

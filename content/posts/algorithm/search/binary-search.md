@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "Binary Search"
 date: "2023-05-06"
 description: "Notes on Binary search"
-tags: ["algorithm", "graph theory"]
+tags: ["algorithm", "search", "graph"]
 ShowToc: true
 ---
 

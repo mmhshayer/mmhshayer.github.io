@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "Breadth First Search"
 date: "2023-05-06"
 description: "Notes on Breadth First Search (BFS)"
-tags: ["algorithm", "graph theory"]
+tags: ["algorithm", "search", "graph"]
 ShowToc: true
 ---
 

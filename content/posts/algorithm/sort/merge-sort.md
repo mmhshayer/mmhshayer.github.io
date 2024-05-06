@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "Merge Sort"
 date: "2023-05-06"
 description: "Notes on Merge Sort"
-tags: ["algorithm", "sorting", "recursive"]
+tags: ["algorithm", "sort", "recursive"]
 ShowToc: true
 ---
 
