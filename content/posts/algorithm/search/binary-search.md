@@ -3,9 +3,8 @@ author: "Mohammad Mustakim Hassan"
 title: "Binary Search"
 date: "2023-05-06"
 description: "Notes on Binary search"
-tags: ["algorithm"]
+tags: ["algorithm", "graph theory"]
 ShowToc: true
-draft: true
 ---
 
 ## Introduction
@@ -21,9 +20,7 @@ Binary Search is a searching algorithm used in a sorted array by repeatedly divi
 - This process is continued until the key is found or the total search space is exhausted.
 
 ## Example
-
 Suppose we have an array of sorted integers: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]. We want to search for the element 11 in this array using binary search.
-
 1. Start with the entire array: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19].
 2. Determine the middle element: 9 (at index 4).
 3. Compare the middle element (9) with the target (11).
@@ -41,7 +38,6 @@ Suppose we have an array of sorted integers: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 The element 11 is found at index 5 in the array.
 
 ## JavaScript Implementation
-
 ```javascript
 // find index of an element (target) in a sorted array(arr) using binary search
 function binarySearch(arr, target) {
@@ -70,8 +66,9 @@ console.log(`Element ${target} found at index ${index}`);
 ```
 
 ## Complexity Analysis
+Binary search has a time complexity of O(log N) where N is the number of elements in the sorted array. 
 
-Binary search has a time complexity of O(log N) and a space complexity of O(1), where N is the number of elements in the sorted array. This logarithmic time complexity makes binary search highly efficient, especially for large datasets, as it significantly reduces the number of comparisons needed to find the target element.
+Space complexity is O(1) as it uses a constant amount of extra space.
 
 ## Advantage and Disadvantage
 
@@ -86,7 +83,6 @@ Binary search has a time complexity of O(log N) and a space complexity of O(1), 
 - **No Handling of Duplicates**: Binary search may not handle duplicates efficiently, especially if the application requires finding all occurrences of a particular element.
 
 ## Application
-
 Binary search finds application in various domains where efficiency in searching large datasets is crucial. Some common applications include:
 - **Database Systems**: Binary search is used in database systems to quickly locate records based on indexed columns.
 - **Information Retrieval**: Search engines utilize binary search to efficiently retrieve relevant information from a large corpus of documents.

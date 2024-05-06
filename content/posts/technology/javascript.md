@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "JavaScript"
 date: "2023-05-16"
 description: "A brief description of JavaScript"
-tags: ["frontend", "web", "javascript"]
+tags: ["technology", "javascript"]
 ShowToc: true
 draft: true
 ---

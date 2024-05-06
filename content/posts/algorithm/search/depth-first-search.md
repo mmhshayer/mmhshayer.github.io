@@ -19,7 +19,6 @@ Depth First Search (DFS) is a graph traversal algorithm that explores as far as 
 - If there are no unvisited adjacent vertices, backtrack to the previous vertex.
 
 ## Example
-
 Consider the following graph:
 ```
      A
@@ -28,11 +27,9 @@ Consider the following graph:
  / \ | / \
 D   E F   G
 ```
-
 Starting from vertex A, a depth-first traversal would visit vertices in the order: A -> B -> D -> E -> C -> F -> G.
 
 ## JavaScript Implementation
-
 ```javascript
 class Graph {
     constructor() {
@@ -91,7 +88,8 @@ console.log('Depth First Search Traversal Order:', traversalOrder);
 // Depth First Search Traversal Order: [ 'A', 'B', 'D', 'E', 'C', 'F', 'G' ]
 ```
 ## Complexity Analysis
-The time complexity of Depth First Search is O(V + E), where V is the number of vertices and E is the number of edges in the graph. The space complexity is O(V) due to the recursive nature of the algorithm.
+The time complexity of Depth First Search is O(V + E), where V is the number of vertices and E is the number of edges in the graph. 
+The space complexity is O(V) due to the recursive nature of the algorithm.
 
 ## Advantage and Disadvantage
 
@@ -105,7 +103,6 @@ The time complexity of Depth First Search is O(V + E), where V is the number of 
 
 ## Application
 Depth First Search finds applications in various fields, including:
-
 - **Graph Theory**: Used for graph traversal, cycle detection, and topological sorting.
 - **Maze Solving**: DFS can be used to solve mazes by exploring paths until a solution is found.
 - Puzzle Games: Used to solve puzzles like Sudoku and crossword puzzles.

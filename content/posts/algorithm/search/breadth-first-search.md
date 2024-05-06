@@ -5,7 +5,6 @@ date: "2023-05-06"
 description: "Notes on Breadth First Search (BFS)"
 tags: ["algorithm", "graph theory"]
 ShowToc: true
-draft: true
 ---
 
 ## Introduction
@@ -19,7 +18,6 @@ Breadth First Search (BFS) is a graph traversal algorithm that explores all the 
 - Repeat the process until all vertices are visited.
 
 ## Example
-
 Consider the following graph:
 ```
      A
@@ -28,11 +26,9 @@ Consider the following graph:
  / \ | / \
 D   E F   G
 ```
-
 Starting from vertex A, a breadth-first traversal would visit vertices in the order: A -> B -> C -> D -> E -> F -> G.
 
 ## JavaScript Implementation
-
 ```javascript
 class Graph {
     constructor() {
@@ -96,8 +92,8 @@ console.log('Breadth First Search Traversal Order:', traversalOrder);
 ```
 
 ## Complexity Analysis
-
-The time complexity of Breadth First Search is O(V + E), where V is the number of vertices and E is the number of edges in the graph. The space complexity is O(V) due to the queue used in the algorithm.
+The time complexity of Breadth First Search is O(V + E), where V is the number of vertices and E is the number of edges in the graph. 
+The space complexity is O(V) due to the queue used in the algorithm.
 
 ## Advantage and Disadvantage
 
@@ -112,7 +108,6 @@ Completeness: BFS is complete, meaning it will always find a solution if one exi
 
 ## Application
 Breadth First Search finds applications in various fields, including:
-
 - **Shortest Path Finding**: Used in GPS navigation systems to find the shortest route between two locations.
 - **Network Broadcasting**: Used in network routing protocols to broadcast information to all nodes in a network.
 - **Web Crawling**: BFS is used by search engines to crawl and index web pages on the internet.

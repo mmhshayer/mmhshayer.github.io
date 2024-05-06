@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "HTML"
 date: "2023-05-15"
 description: "A brief description of HTML"
-tags: ["frontend", "web", "html"]
+tags: ["technology", "html"]
 ShowToc: true
 draft: true
 ---

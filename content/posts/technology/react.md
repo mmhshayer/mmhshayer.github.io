@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "React & Next.js: Building Powerful Web Applications"
 date: "2023-08-28"
 description: "Revolutionizing modern web application development."
-tags: ["frontend", "web", "react", "nextjs"]
+tags: ["technology", "frontend", "react", "nextjs"]
 ShowToc: true
 draft: true
 ---

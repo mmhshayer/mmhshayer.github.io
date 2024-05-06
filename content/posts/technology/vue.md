@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "Vue & Nuxt.js: Advancing Web Development with Key Benefits"
 date: "2023-08-28"
 description: "Intuitive UIs and efficient web development"
-tags: ["frontend", "web", "vue", "nuxtjs"]
+tags: ["technology", "frontend", "vue", "nuxtjs"]
 ShowToc: true
 draft: true
 ---

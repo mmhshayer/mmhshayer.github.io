@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "Deploying a JAMstack Blog with Hugo, PaperMod, GitHub Actions, and GitHub Pages"
 date: "2023-08-28"
 description: "Learn how to deploy a JAMstack blog using Hugo, PaperMod theme, GitHub Actions, and GitHub Pages."
-tags: ["frontend", "web", "Hugo", "PaperMod", "JAMstack", "GitHub Actions", "GitHub Pages"]
+tags: ["frontend","Hugo", "GitHub Actions", "GitHub Pages"]
 ShowToc: true
 ---
 ## Introduction

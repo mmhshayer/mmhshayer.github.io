@@ -3,7 +3,7 @@ author: "Mohammad Mustakim Hassan"
 title: "CSS"
 date: "2023-05-17"
 description: "A brief description of CSS"
-tags: ["frontend", "web", "css"]
+tags: ["technology", "css"]
 ShowToc: true
 draft: true
 ---
