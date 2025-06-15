@@ -1,28 +1,17 @@
 # Required Environment Variables:
-#   - ACTIONS_DEPLOY_KEY (If deploying to an external repository via EXTERNAL_REPO_NAME):
-#     The private SSH key for deployment, configured as a secret.
-#     The corresponding public key must be added as a deploy key with write access to the target external repository.
-#
-# Deploying to an External Repository:
-#   By default, files are published to the repository running this action.
-#   To publish to a different repository, set the `EXTERNAL_REPO_NAME` environment variable to `owner/repository-name`.
-#   When you use deploy_key, set your private key to the repository which includes this action and set your public key to your external repository.
-#   When `EXTERNAL_REPO_NAME` is set, this workflow will use the `ACTIONS_DEPLOY_KEY` secret for authentication.
-#   `GITHUB_TOKEN` does not have permission to push to external repositories.
-#   Use Case: Deploying from a private source repository to a public GitHub Pages repository.
+#   - BRANCH_TO_DEPLOY: The branch in this repo to be deployed.
 #
 # Optional Environment Variables:
+#   - ACTIONS_DEPLOY_KEY (If deploying to an external repository via EXTERNAL_REPO_NAME): The private SSH key for deployment, configured as a secret. The corresponding public key must be added as a deploy key with write access to the target external repository.
 #   - DEPLOYMENT_URL: The URL of the deployed site (defaults to https://ethercraftguild.github.io/).
 #   - ARTIFACT_PATH: The directory containing the built static files to deploy (defaults to ./out for Next.js/Nuxt.js, ./public for Hugo).
-#   - PUBLISH_BRANCH_NAME: The branch to deploy to.
-#                          Defaults to 'main' if EXTERNAL_REPO_NAME is set, otherwise 'gh-pages'.
-#   - EXTERNAL_REPO_NAME:  If set, specifies an external repository (e.g., `owner/repo-name`) to deploy to.
-#                          If not set, deployment will be to a branch in the current repository.
+#   - PUBLISH_BRANCH_NAME: The branch to deploy to. Defaults to 'main' if EXTERNAL_REPO_NAME is set, otherwise 'gh-pages'.
+#   - EXTERNAL_REPO_NAME:  If set, specifies an external repository (e.g., `owner/repo-name`) to deploy to. If not set, deployment will be to a branch in the current repository.
+#
 
 name: Build & Deploy Static Site
 
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Allow actions/checkout to fetch code and for other workspace operations
@@ -40,14 +29,14 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ env.DEPLOYMENT_URL || 'https://ethercraftguild.github.io/' }}
+      url: ${{ env.DEPLOYMENT_URL || 'https://mmhshayer.github.io/' }}
     steps:
       - name: Checkout Source Repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch }}
+          ref: ${{ env.BRANCH_TO_DEPLOY }}
           submodules: true # Needed for Hugo themes
-          fetch-depth: 0   # Needed for Hugo themes
+          fetch-depth: 0 # Needed for Hugo themes
 
       - name: Detect Project Type
         id: detect-project-type
@@ -121,7 +110,7 @@ jobs:
         if: ${{ steps.detect-project-type.outputs.project_type == 'hugo' }}
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest' # Use 'latest' or a specific version like '0.91.2'
+          hugo-version: "latest" # Use 'latest' or a specific version like '0.91.2'
 
       - name: Build Hugo Site
         if: ${{ steps.detect-project-type.outputs.project_type == 'hugo' }}
@@ -144,17 +133,30 @@ jobs:
           publish_branch: ${{ env.PUBLISH_BRANCH_NAME || (env.EXTERNAL_REPO_NAME && 'main') || 'gh-pages' }}
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
+# ---
+# External Repository Deployment & SSH Key Setup
+# ---
+# This workflow can deploy your site to a **different GitHub repository**
+# than where the code lives. This is especially useful for publishing a
+# site from a private source repository to a public GitHub Pages repository.
 #
-# How to set up an SSH Deploy Key for external repository deployments:
+# By default, files publish to the current repository.
+# To deploy to an **external repository**:
+#   - Set the `EXTERNAL_REPO_NAME` environment variable to `owner/repository-name`.
+#   - Authentication for external repos **requires an SSH Deploy Key**.
+#     The private key must be configured as a secret named `ACTIONS_DEPLOY_KEY`
+#     in *this* repository. The public key needs write access in the *target* repository.
 #
-# 1. Generate SSH Key Pair:
-#    Run: ssh-keygen -t ed25519 -C "$(git config user.email)" -f gh-pages -N ""
-#    This creates `gh-pages` (private key) and `gh-pages.pub` (public key).
+# ---
+# Setting up an SSH Deploy Key:
+# ---
+# 1.  **Generate Keys**: Run `ssh-keygen -t ed25519 -C "$(git config user.email)" -f gh-pages -N ""`
+#     This creates `gh-pages` (private) and `gh-pages.pub` (public) keys.
 #
-# 2. Add Public Key to Target External Repository:
-#    - Go to the target repository's `Settings` > `Deploy keys`.
-#    - Click `Add deploy key`, paste the content of `gh-pages.pub`, and check "Allow write access".
+# 2.  **Add Public Key to Target Repository**:
+#     Go to the **external repository's** `Settings` > `Deploy keys`.
+#     Add `gh-pages.pub` content and **enable "Allow write access"**.
 #
-# 3. Add Private Key to Source Repository (where this workflow runs):
-#    - Go to this repository's `Settings` > `Secrets and variables` > `Actions`.
-#    - Click `New repository secret`, name it `ACTIONS_DEPLOY_KEY`, and paste the content of the `gh-pages` (private key) file.
+# 3.  **Add Private Key to Source Repository**:
+#     Go to **this repository's** `Settings` > `Secrets and variables` > `Actions`.
+#     Create a new secret named `ACTIONS_DEPLOY_KEY` and paste the `gh-pages` (private key) content.
