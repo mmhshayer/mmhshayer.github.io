@@ -45,7 +45,7 @@ jobs:
       - name: Checkout Source Repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ inputs.branch }}
           submodules: true # Needed for Hugo themes
           fetch-depth: 0   # Needed for Hugo themes
 
