@@ -13,6 +13,11 @@ name: Build & Deploy Static Site
 
 on:
   workflow_dispatch:
+    inputs:
+      BRANCH_TO_DEPLOY:
+        description: "The branch in this repo to be deployed."
+        required: true
+        default: "main" # Or your typical deployment branch
 
 # Allow actions/checkout to fetch code and for other workspace operations
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -34,7 +39,7 @@ jobs:
       - name: Checkout Source Repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.BRANCH_TO_DEPLOY }}
+          ref: ${{ github.event.inputs.BRANCH_TO_DEPLOY }}
           submodules: true # Needed for Hugo themes
           fetch-depth: 0 # Needed for Hugo themes
 
@@ -61,13 +66,6 @@ jobs:
             exit 1
           fi
 
-      - name: Setup Node.js Environment (for Next.js/Nuxt.js)
-        if: ${{ steps.detect-project-type.outputs.project_type == 'nextjs' || steps.detect-project-type.outputs.project_type == 'nuxtjs' }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20.17.0"
-          cache: ${{ steps.detect-package-manager.outputs.manager }} # This step is defined later, might need re-evaluation
-
       - name: Detect package manager (for Node.js projects)
         id: detect-package-manager
         if: ${{ steps.detect-project-type.outputs.project_type == 'nextjs' || steps.detect-project-type.outputs.project_type == 'nuxtjs' }}
@@ -86,6 +84,13 @@ jobs:
             echo "Unable to determine package manager for Node.js project"
             exit 1
           fi
+
+      - name: Setup Node.js Environment (for Next.js/Nuxt.js)
+        if: ${{ steps.detect-project-type.outputs.project_type == 'nextjs' || steps.detect-project-type.outputs.project_type == 'nuxtjs' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.17.0"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
 
       - name: Install dependencies (for Node.js projects)
         if: ${{ steps.detect-project-type.outputs.project_type == 'nextjs' || steps.detect-project-type.outputs.project_type == 'nuxtjs' }}
