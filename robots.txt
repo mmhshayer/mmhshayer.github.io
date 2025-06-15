@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://mmhshayer.github.io
+Sitemap: https://mmhshayer.github.io/sitemap.xml
