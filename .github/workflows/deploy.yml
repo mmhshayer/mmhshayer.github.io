@@ -41,28 +41,22 @@ jobs:
       - name: Detect Project Type
         id: detect-project-type
         run: |
-          PROJECT_TYPE="unknown"
-          ARTIFACT_DEFAULT_PATH=""
-
           if [ -f "${{ github.workspace }}/next.config.js" ]; then
             echo "Detected Next.js project."
-            PROJECT_TYPE="nextjs"
-            ARTIFACT_DEFAULT_PATH="./out"
+            echo "project_type=nextjs" >> $GITHUB_OUTPUT
+            echo "artifact_default_path=./out" >> $GITHUB_OUTPUT
           elif [ -f "${{ github.workspace }}/nuxt.config.js" ]; then
             echo "Detected Nuxt.js project."
-            PROJECT_TYPE="nuxtjs"
-            ARTIFACT_DEFAULT_PATH="./dist" # Nuxt.js default build output
+            echo "project_type=nuxtjs" >> $GITHUB_OUTPUT
+            echo "artifact_default_path=./dist" >> $GITHUB_OUTPUT
           elif [ -f "${{ github.workspace }}/config.toml" ] || [ -f "${{ github.workspace }}/config.yaml" ] || [ -f "${{ github.workspace }}/config.json" ] || [ -d "${{ github.workspace }}/archetypes" ] || [ -d "${{ github.workspace }}/content" ]; then
             echo "Detected Hugo project."
-            PROJECT_TYPE="hugo"
-            ARTIFACT_DEFAULT_PATH="./public"
+            echo "project_type=hugo" >> $GITHUB_OUTPUT
+            echo "artifact_default_path=./public" >> $GITHUB_OUTPUT
           else
             echo "Unable to determine project type. Exiting."
             exit 1
           fi
-
-          echo "project_type=$PROJECT_TYPE" >> $GITHUB_OUTPUT
-          echo "artifact_default_path=$ARTIFACT_DEFAULT_PATH" >> $GITHUB_OUTPUT
 
       - name: Setup Node.js Environment (for Next.js/Nuxt.js)
         if: ${{ steps.detect-project-type.outputs.project_type == 'nextjs' || steps.detect-project-type.outputs.project_type == 'nuxtjs' }}
